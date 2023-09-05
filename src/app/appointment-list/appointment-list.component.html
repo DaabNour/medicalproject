@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="container">
+    <div class="text">
+       Appointments List
+    </div>
+<thead>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>firstname</th>
+                <th>AppointmentDate</th>
+                <th>AppointmentTime</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+<tbody>
+    <tr *ngFor="let appointment of appointmentList ">
+        <th>{{ appointment.id }}</th>
+
+        <td>{{ appointment.firstname }}</td>
+        <td>{{ appointment.appointmentDate }}</td>
+        <td>{{ appointment.appointmentTime }}</td>
+        <td>
+            <button class="btn btn-info">Details</button>
+            <button class="btn btn-danger mx-3" >Delete</button>
+            <button class="btn btn-warning">Update</button>
+
+        </td>
+    </tr>
+</tbody>
+</table>

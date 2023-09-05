@@ -1,0 +1,27 @@
+
+<main class="form-contact ">
+<h2>Contact Us</h2>
+
+<form [formGroup]="mycontactForm" (ngSubmit)="savemsg()">
+<label for="namecontact">Name</label>
+<input  placeholder="Write your name here.." type="text" name="namecontact" id="namecontact" formControlName="namecontact">
+<label for="emailcontact">Email</label>
+<input placeholder="Let us know how to contact you back.." type="text" name="emailcontact" id="emailcontact"  formControlName="emailcontact">
+
+
+<label for="message">Message</label>
+<input placeholder="What would you like to tell us.." type="text" name="message" id="message" formControlName="message">
+
+<button>
+<input type="submit" value="Send Message">
+</button>
+ 
+<div class="info">
+    <span class="fas fa-phone"></span>001 1023 567
+    <span class="fas fa-envelope-o"></span> doctor@gmail.com
+  </div>
+
+</form>
+</main>
+
+

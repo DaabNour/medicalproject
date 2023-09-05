@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="text">
+         Add Appointment
+      </div>
+    <form [formGroup]="myappForm" (ngSubmit)="saveAppointment()">
+        <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="firstname" id="firstname" formControlName="firstname">
+               <div class="underline"></div>
+               <label for="firstname">Firstname</label>
+            </div>
+            <div class="input-data">
+                <input type="text" required name="appointmenttime" id="appointmenttime" formControlName="appointmenttime">
+                <div class="underline"></div>
+                <label for="">AppointmentTime</label>
+             </div>
+             </div>
+             <div class="form-row">
+
+             <div class="input-data">
+                <input type="text" required name="appointmentdate" id="appointmentdate" formControlName="appointmentdate">
+                <div class="underline"></div>
+                <label for="">AppointmentDate</label>
+                </div>
+             </div>
+
+
+             <div class="form-row submit-btn">
+                <div class="input-data">
+                   <div class="inner"></div>
+                   <input type="submit" value="Add">
+                </div>
+             </div>
+
+
+       
+
+
+    </form>
+</div>
+<app-footer></app-footer>
+

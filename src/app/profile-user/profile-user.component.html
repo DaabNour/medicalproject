@@ -1,0 +1,45 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="container rounded ">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="profile-avatar">
+                <img class="rounded-circle" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="User Avatar">
+            </div>
+            <h4 class="profile-name">Nour Db</h4>
+            <p class="profile-email">nour@gmail.com</p>
+        </div>
+        <div class="col-md-5 border-right">
+
+            <div class="profile-details ">
+
+                <h4 class="profile-heading ">Profile Settings</h4>
+                <form [formGroup]="myprofileForm" (ngSubmit)="saveProfile()">
+
+                <div class="inputs">
+                    <label>First Name</label>
+                    <input type="userfirst" placeholder="example@test.com" formControlName="userfirst"/>
+                    <label>Last Name</label>
+                    <input type="userlast" placeholder="Min 6 charaters long" formControlName="userlast" />
+                    <label>Date of Birth</label>
+                    <input type="userbirth" placeholder="Min 6 charaters long" formControlName="userbirth" />
+                    <label>Email</label>
+                    <input type="useremail" placeholder="Min 6 charaters long" formControlName="useremail" />
+                    <label>phonenumber</label>
+                    <input type="usertel" placeholder="Min 6 charaters long" formControlName="usertel"/>
+            </div>
+            <button type="submit">Save Profile</button>
+        </form>
+        </div> 
+        <div class="profile-actions text-right">
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="add-appointment">
+                    <i class="fas fa-plus"></i> Add Appointment
+                </span>
+                <button class="btn btn-secondary">
+                    <i class="fas "></i> Medical Record
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

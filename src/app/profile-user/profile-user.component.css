@@ -1,0 +1,119 @@
+
+
+
+.profile-avatar {
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+.profile-avatar img {
+  width: 190px;
+  height: 190px;
+}
+
+
+.profile-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.profile-email {
+    text-align: center;
+    color: grey;
+    margin-top: 5px;
+}
+
+
+
+.profile-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c6975;
+
+}
+
+.inputs {
+    text-align: left;
+    margin-top: 30px;
+  }
+  
+  label, input, button {
+    color: #2c6975;
+
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  label {
+    margin-bottom: 4px;
+  }
+  
+
+  
+  input::placeholder {
+    color: gray;
+  }
+  
+  input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  }
+  
+
+
+  button {
+    color: white;
+    margin-top: 20px;
+    background: #1DA1F2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    
+  }
+
+  
+  button:hover {
+    box-shadow: none;
+  }
+
+.add-appointment {
+    background-color: #fff;
+    color: #007BFF;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    cursor: pointer;
+}
+
+.add-appointment:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+
+.btn-secondary{
+    background-color: #6c757d;
+    color: black;
+    padding: 8px 15px;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}

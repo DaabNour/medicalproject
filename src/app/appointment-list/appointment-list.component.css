@@ -1,0 +1,9 @@
+.container .text{
+    text-align: center;
+    font-size: 41px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    background: -webkit-linear-gradient(#ffffff, #e3f6f5, #bae8e8, #272343);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
