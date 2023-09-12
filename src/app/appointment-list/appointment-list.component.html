@@ -2,12 +2,13 @@
 
 
 <div class="container">
-    <div class="text">
+    <div class="h2">
        Appointments List
     </div>
-<thead>
     <table class="table">
+    
         <thead>
+            
             <tr>
                 <th>Id</th>
                 <th>firstname</th>
@@ -15,6 +16,7 @@
                 <th>AppointmentTime</th>
                 <th>Action</th>
             </tr>
+            
         </thead>
 <tbody>
     <tr *ngFor="let appointment of appointmentList ">
@@ -24,10 +26,12 @@
         <td>{{ appointment.appointmentDate }}</td>
         <td>{{ appointment.appointmentTime }}</td>
         <td>
-            <button class="btn btn-info">Details</button>
-            <button class="btn btn-danger mx-3" >Delete</button>
-            <button class="btn btn-warning">Update</button>
+            <div class="gem-button-container gem-button-position-center">
+            <button class="btn gem-button gem-green ">Details</button>
+            <button class="btn gem-button gem-purpel">Update</button>
+            <button class="btn gem-button gem-orange" >Delete</button>
 
+        </div>
         </td>
     </tr>
 </tbody>

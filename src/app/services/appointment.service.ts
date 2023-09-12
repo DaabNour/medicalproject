@@ -13,7 +13,7 @@ export class AppointmentService {
   private addAppointmentUrl="http://localhost:8080/appointments/add";
   private getOneAppointmentByDateUrl ="http://localhost:8080/appointments/byAppointmentDate/{appointmentDate}";
   private updateAppointmentUrl="http://localhost:8080/appointments/update/{id}";
-
+  private getOneAppointmentIDUrl="http://localhost:8080/appointments/{id}"
   constructor(private httpappointment:HttpClient) {
 
   }
@@ -24,6 +24,10 @@ export class AppointmentService {
 
     }
 
+    getOneAppointmentID(id: String) {
+      return this.httpappointment.get<any>(this.getOneAppointmentIDUrl + id)
+    }
+  
     
   getOneAppointment(firstname: String) {
     return this.httpappointment.get<any>(this.getOneAppointmentUrl + firstname)
@@ -46,4 +50,3 @@ export class AppointmentService {
       return this.httpappointment.put<any>(this.updateAppointmentUrl ,id);
     }
    }
-
