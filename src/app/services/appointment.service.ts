@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'http://localhost:4200' // Replace with your server's URL
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +25,7 @@ export class AppointmentService {
   }
 
     getAllAppointments(){
-      return this.httpappointment.get<any>(this.getAllAppointmentsUrl);
+      return this.httpappointment.get(this.getAllAppointmentsUrl,httpOptions);
        
 
     }
