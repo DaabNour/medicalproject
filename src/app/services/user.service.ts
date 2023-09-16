@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+const httpOptions = {
+  headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'http://localhost:4200' // Replace with your server's URL
+  })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private getAllUsersUrl = "http://localhost:8080/appointments/all";
+  private getAllUsersUrl = "http://localhost:8080/users/all";
   private updateUserUrl="http://localhost:8080/users/update/{idu}";
   private getUserUrl= "http://localhost:8080/users/{idu}";
   private deleteUserUrl ="http://localhost:8080/users/delete/{idu}";
@@ -18,7 +25,7 @@ export class UserService {
   }
 
     getAllUsers(){
-      return this.httpuser.get<any>(this.getAllUsersUrl);
+      return this.httpuser.get<any>(this.getAllUsersUrl,httpOptions);
        
 
     }

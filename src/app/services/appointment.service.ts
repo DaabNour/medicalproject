@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
 const httpOptions = {
   headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -30,10 +31,11 @@ export class AppointmentService {
 
     }
 
-    getOneAppointmentID(id: String) {
+    getOneAppointmentID(id: String): Observable<any> {
       return this.httpappointment.get<any>(this.getOneAppointmentIDUrl + id)
     }
   
+
     
   getOneAppointment(firstname: String) {
     return this.httpappointment.get<any>(this.getOneAppointmentUrl + firstname)

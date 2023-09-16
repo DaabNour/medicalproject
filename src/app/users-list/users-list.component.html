@@ -1,0 +1,42 @@
+
+
+<div class="container">
+    <div class="h2">
+       Users List
+    </div>
+    <table class="table">
+    
+        <thead>
+           
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Action</th>
+
+            </tr>
+            
+        </thead>
+<tbody>
+    <tr *ngFor="let user of ListU ">
+        <th>{{ user.idu }}</th>
+
+        <td>{{ user.firstNameu }}</td>
+        <td>{{ user.lastNameu }}</td>
+        <td>{{ user.emailu }}</td>
+        <td>{{ user.phoneu }}</td>
+
+        <td>
+            <div class="gem-button-container gem-button-position-center">
+            <button class="btn gem-button gem-green ">Details</button>
+            <button class="btn gem-button gem-purpel">Update</button>
+            <button class="btn gem-button gem-orange" >Delete</button>
+
+        </div>
+        </td>
+    </tr>
+</tbody>
+</table>
+

@@ -9,25 +9,7 @@ import { AppointmentService } from '../services/appointment.service';
 export class AppointmentListComponent implements OnInit {
   List :any[]=[] ;
 
-  appointmentList =[
-    {id: 1,
-      firstname: "Nour",
-      appointmentDate:"17-01-2023",
-      appointmentTime:"17h20",
-    },
-    {id: 2,
-      firstname: "Ayoub",
-      appointmentDate:"20-05-2023",
-      appointmentTime:"09h20",
-    },
-    {id: 3,
-      firstname: "emna",
-      appointmentDate:"01-01-2023",
-      appointmentTime:"10h20",
-    },
-    
-
-  ]
+  
 constructor(private appointmentService:AppointmentService){
 
 }
@@ -43,11 +25,24 @@ constructor(private appointmentService:AppointmentService){
         
       } ,
       (error:any) =>{
-        console.error('Une erreur s\'est produite lors du chargement des catégories : ', error);
+        console.error('Une erreur s\'est produite lors du chargement des appointments : ', error);
       }
 
     )
 
+
   
     }
+//getOneAppointmentID(){
+   //this.appointmentService.getOneAppointmentID(id).subscribe(
+        //(response) => {
+          
+        //  console.log('Appointment data: ', response);
+       // },
+        //(error) => {
+        //  console.error('Error fetching appointment by ID: ', error);
+        //}
+      //)
+    //}
+    
 }

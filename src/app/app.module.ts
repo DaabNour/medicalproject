@@ -22,6 +22,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { SecretaryNavbarComponent } from './secretary-navbar/secretary-navbar.component';
 import { SecretaryProfileComponent } from './secretary-profile/secretary-profile.component';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { MedicalrecordListComponent } from './medicalrecord-list/medicalrecord-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,8 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
     SecretaryNavbarComponent,
     SecretaryProfileComponent,
     DoctorProfileComponent,
+    UsersListComponent,
+    MedicalrecordListComponent,
     
     
   ],

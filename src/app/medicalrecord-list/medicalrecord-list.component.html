@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+
+<div class="container">
+    <div class="h2">
+       Medical Records List
+    </div>
+    <table class="table">
+    
+        <thead>
+            
+            <tr>
+                <th>Id</th>
+                <th>Date of birth</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+                <th>Diagnosis</th>
+                <th>Treatment</th>
+                <th>Action</th>
+            </tr>
+            
+        </thead>
+<tbody>
+    <tr *ngFor="let medicalrecord of ListMed ">
+        <th>{{ medicalrecord.id }}</th>
+
+        <td>{{ medicalrecord.datenaiss }}</td>
+        <td>{{ medicalrecord.appointmentDate }}</td>
+        <td>{{ medicalrecord.appointmentTime }}</td>
+        <td>{{ medicalrecord.diagnosis }}</td>
+
+        <td>{{ medicalrecord.treatment }}</td>
+
+        <td>
+            <div class="gem-button-container gem-button-position-center">
+            <button class="btn gem-button gem-green ">Details</button>
+            <button class="btn gem-button gem-purpel">Update</button>
+            <button class="btn gem-button gem-orange" >Delete</button>
+
+        </div>
+        </td>
+    </tr>
+</tbody>
+</table>
+
