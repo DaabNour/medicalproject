@@ -1,0 +1,18 @@
+<app-secretary-navbar></app-secretary-navbar>
+<div class="parent">
+  <div class="div1">
+    <div class="container">
+      <div class="heading">User Info</div>
+      <form  [formGroup]="userForm"  (ngSubmit)="updateuser()" class="form">
+        <input required="" formControlName="firstNameu"  class="input" type="text" name="firstname" id="firstname" placeholder="Firstname">
+        <input required="" formControlName="lastNameu" class="input" type="text" name="lastname" id="lastname" placeholder="Lastname">
+        <input required="" formControlName="emailu" class="input" type="email" name="email" id="email" placeholder="E-mail">
+        <input required="" formControlName="phoneu" class="input" type="phone" name="phone" id="phone" placeholder="Phone Number">
+        <input required="" formControlName="passwordu" class="input" type="text" name="password" id="password" placeholder="Password">
+        <input class="register-button"  type="submit"   value="Back to List"  >
+      </form>
+
+    </div>
+     </div>
+  </div>
+

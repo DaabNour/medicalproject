@@ -1,14 +1,11 @@
-<app-navbar></app-navbar>
-
+<app-doctornavbar></app-doctornavbar><div class="mrlist">
 
 <div class="container">
     <div class="h2">
        Medical Records List
     </div>
     <table class="table">
-    
         <thead>
-            
             <tr>
                 <th>Id</th>
                 <th>Date of birth</th>
@@ -18,10 +15,33 @@
                 <th>Treatment</th>
                 <th>Action</th>
             </tr>
-            
         </thead>
-<tbody>
-    <tr *ngFor="let medicalrecord of ListMed ">
+        <tbody>
+
+           <tr *ngFor="let item of ListMed">
+              <td>{{item.id_medrec}}</td>
+              <td>{{item.datenaiss}} </td>
+              <td>{{item.appointmentDate}} </td>
+              <td>{{item.appointmentTime}} </td>
+              <td>{{item.diagnosis}} </td>
+              <td>{{item.treatment}} </td>
+              <td>
+                  <div class="gem-button-container gem-button-position-center">
+                      <button class="btn btn-doctor" [routerLink]="['/detailsmed',item.id_medrec]" >Details</button>
+                      <button class="btn btn-doctor" [routerLink]="['/updateMed',item.id_medrec]">Update</button>
+                      <button class="btn btn-doctor" (click)="deleteMedRecord(item.id_medrec)">Delete</button>
+                  </div>
+              </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</div>
+<app-footer></app-footer>
+  <!--
+     <tr *ngFor="let medicalrecord of ListMed ">
         <th>{{ medicalrecord.id }}</th>
 
         <td>{{ medicalrecord.datenaiss }}</td>
@@ -40,6 +60,4 @@
         </div>
         </td>
     </tr>
-</tbody>
-</table>
-
+  -->

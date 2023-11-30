@@ -12,12 +12,12 @@ const httpOptions = {
 })
 export class MedicalrecordService {
   private getAllMedicalRecUrl = "http://localhost:8080/MedicalRecords/all";
-  private deleteMedicalRecUrl ="http://localhost:8080/MedicalRecords/delete/{id}";
+  private deleteMedicalRecUrl ="http://localhost:8080/MedicalRecords/delete/";
   private deleteAllMedicalRecUrl="http://localhost:8080//MedicalRecords/deleteAll"
-  private getOneMedicalRecUrl= "http://localhost:8080/MedicalRecords/{id}";
+  private getOneMedicalRecUrl= "http://localhost:8080/MedicalRecords/";
   private addAMedicalRecUrl="http://localhost:8080/MedicalRecords/add";
   private getOneMedicalRecByDateUrl ="http://localhost:8080/MedicalRecords/byDatenaiss/{datebirth}";
-  private updateMedicalRecUrl="http://localhost:8080/MedicalRecords/update//{id}";
+  private updateMedicalRecUrl="http://localhost:8080/MedicalRecords/update/";
 
   constructor(private httpmedicalrecord:HttpClient) {
 
@@ -25,35 +25,36 @@ export class MedicalrecordService {
 
     getAllMedicalRecs(){
       return this.httpmedicalrecord.get<any>(this.getAllMedicalRecUrl);
-       
+
 
     }
 
-    
-  getOneMedicalRec(firstname: String) {
-    return this.httpmedicalrecord.get<any>(this.getOneMedicalRecUrl + firstname)
+
+  getOneMedicalRec(id: number) {
+    return this.httpmedicalrecord.get<any>(this.getOneMedicalRecUrl +id)
   }
 
 
-    deleteMedicalRec(id: String) {
+    deleteMedicalRec(id: number) {
       return this.httpmedicalrecord.delete<any>(this.deleteMedicalRecUrl + id)
     }
 
-    deleteAllMedicalRec(){
-      return this.httpmedicalrecord.delete(this.deleteAllMedicalRecUrl);
+
+
+
+
+    addAMedicalRec(med:any) {
+      return this.httpmedicalrecord.post(this.addAMedicalRecUrl,med );
     }
 
-    //addAMedicalRec() {
-      //return this.httpmedicalrecord.post<any>(this.addAMedicalRecUrl, );
-    //}
-    
     getOneMedicalRecByDate(datebirth: String) {
       return this.httpmedicalrecord.get<any>(this.getOneMedicalRecByDateUrl + datebirth)
     }
 
-    updateMedicalRec(id :String){
-      return this.httpmedicalrecord.put<any>(this.updateMedicalRecUrl ,id);
+    updateMedicalRec(id :number,medred:any){
+      return this.httpmedicalrecord.put<any>(this.updateMedicalRecUrl +id,medred);
     }
+
    }
 
 

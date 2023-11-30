@@ -14,21 +14,38 @@ export class MedicalrecordListComponent implements OnInit {
   }
     ngOnInit(): void {
       this.getAllMedicalRecs();
-      
+
     }
 
-    getAllMedicalRecs(){
+getAllMedicalRecs(){
       this.medicalrecordservice.getAllMedicalRecs().subscribe(
         (result:any) =>{
           console.log(result);
           this.ListMed=result;
-          
+
         } ,
         (error:any) =>{
           console.error('Une erreur s\'est produite lors du chargement des catégories : ', error);
         }
-  
+
       )
+}
+
+deleteMedRecord(id: number) {
+
+  this.medicalrecordservice.deleteMedicalRec(id).subscribe(
+    (response) => {
+      console.log("deleted with success");
+
+
+
+
+    },
+    (error) => {
+      // Handle HTTP request error
+      console.error('Error deleting medical record', error);
+    }
+  );
 }
 
 }

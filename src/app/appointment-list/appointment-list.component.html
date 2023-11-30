@@ -1,14 +1,11 @@
-<app-navbar></app-navbar>
-
-
+<app-doctornavbar></app-doctornavbar>
+<div class="applist">
 <div class="container">
     <div class="h2">
        Appointments List
     </div>
-    <table class="table">
-    
+    <table class="table" >
         <thead>
-            
             <tr>
                 <th>Id</th>
                 <th>firstname</th>
@@ -16,23 +13,24 @@
                 <th>AppointmentTime</th>
                 <th>Action</th>
             </tr>
-            
         </thead>
-<tbody>
-    <tr *ngFor="let appointment of List ">
-        <th>{{ appointment.id }}</th>
-
-        <td>{{ appointment.firstname }}</td>
-        <td>{{ appointment.appointmentDate }}</td>
-        <td>{{ appointment.appointmentTime }}</td>
+        <tbody>
+    <tr *ngFor="let appointment of List">
+        <td> {{appointment.id}} </td>
+        <td> {{appointment.firstname}} </td>
+        <td> {{appointment.appointmentDate}} </td>
+        <td> {{appointment.appointmentTime}} </td>
         <td>
-            <div class="gem-button-container gem-button-position-center">
-            <button class="btn gem-button gem-green ">Details</button>
-            <button class="btn gem-button gem-purpel">Update</button>
-            <button class="btn gem-button gem-orange" >Delete</button>
-
-        </div>
+          <div class="gem-button-container gem-button-position-center">
+            <button class="btn btn-doctor" [routerLink]="['/detailsappointment',appointment.id]">Details</button> 
+            <button class="btn btn-doctor" [routerLink]="['/updateappointment',appointment.id]">Update</button>
+            <button class="btn btn-doctor" (click)="deleteappointment(appointment.id)">Delete</button>
+          </div>
         </td>
     </tr>
-</tbody>
-</table>
+
+        </tbody>
+    </table>
+</div>
+</div>
+<app-footer></app-footer>

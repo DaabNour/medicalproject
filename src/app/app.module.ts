@@ -24,6 +24,13 @@ import { SecretaryProfileComponent } from './secretary-profile/secretary-profile
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { MedicalrecordListComponent } from './medicalrecord-list/medicalrecord-list.component';
+import { UpdateMedicalRecordComponent } from './update-medical-record/update-medical-record.component';
+import { UpdateUserDetailsComponent } from './update-user-details/update-user-details.component';
+import { DoctornavbarComponent } from './doctornavbar/doctornavbar.component';
+import { PatientnavbarComponent } from './patientnavbar/patientnavbar.component';
+import { MedicalDetailsComponent } from './medical-details/medical-details.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +53,13 @@ import { MedicalrecordListComponent } from './medicalrecord-list/medicalrecord-l
     DoctorProfileComponent,
     UsersListComponent,
     MedicalrecordListComponent,
+    UpdateMedicalRecordComponent,
+    UpdateUserDetailsComponent,
+    DoctornavbarComponent,
+    PatientnavbarComponent,
+    MedicalDetailsComponent,
+    UserDetailsComponent,
+    AppointmentDetailsComponent,
     
     
   ],

@@ -1,0 +1,43 @@
+<app-login-navbar></app-login-navbar>
+
+    <div class="addMR">
+      <br>
+
+    <div class="container">
+      <form class="form" [formGroup]="updateMedForm" (ngSubmit)="updateMed()">
+        <div class="descr">UPDATE MEDICAL RECORD</div>
+
+        <div class="input">
+            <input  type="date"  name="datebirth" id="datebirth" formControlName="datenaiss">
+            <label for="Date Of Birth">Date Of Birth</label>
+        </div>
+
+        <div class="input">
+          <input  type="date"   name="appdate" id="appdate" formControlName="appointmentDate">
+          <label for="appdate">Appointment Date</label>
+        </div>
+
+        <div class="input">
+        <input type="time"   required name="apptime" id="apptime" formControlName="appointmentTime">
+        <label for="apptime">Appointment Time</label>
+        </div>
+
+        <div class="input">
+            <input required="" type="text" required name="treatment" id="treatment" formControlName="treatment">
+            <label for="treatment">treatment</label>
+        </div>
+
+        <div class="input">
+            <input  type="text"  required="" name="diagnosis" id="diagnosis" formControlName="diagnosis">
+            <label for="diagnosis">diagnosis</label>
+        </div>
+
+        <button type="submit" >Update Medical Record →</button>
+      </form>
+    </div>
+    <br>
+    <br>
+    </div>
+
+
+<app-footer></app-footer>

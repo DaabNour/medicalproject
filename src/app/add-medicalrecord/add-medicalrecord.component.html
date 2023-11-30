@@ -1,61 +1,43 @@
-<app-navbar></app-navbar>
+<app-login-navbar></app-login-navbar>
 
-<div class="container">
-    <div class="text">
-       Add Medical Record
+    <div class="addMR">
+      <br>
+
+    <div class="container">
+      <form class="form" [formGroup]="mymedrecForm" (ngSubmit)="saveMedicalRecord()">
+        <div class="descr">ADD MEDICAL RECORD</div>
+
+        <div class="input">
+            <input  type="date"  name="datebirth" id="datebirth" formControlName="datenaiss">
+            <label for="Date Of Birth">Date Of Birth</label>
+        </div>
+
+        <div class="input">
+          <input  type="date"   name="appdate" id="appdate" formControlName="appointmentDate">
+          <label for="appdate">Appointment Date</label>
+        </div>
+
+        <div class="input">
+        <input type="time"   required name="apptime" id="apptime" formControlName="appointmentTime">
+        <label for="apptime">Appointment Time</label>
+        </div>
+
+        <div class="input">
+            <input required="" type="text" required name="treatment" id="treatment" formControlName="treatment">
+            <label for="treatment">treatment</label>
+        </div>
+
+        <div class="input">
+            <input  type="text"  required="" name="diagnosis" id="diagnosis" formControlName="diagnosis">
+            <label for="diagnosis">diagnosis</label>
+        </div>
+
+        <button type="submit">Add Medical Record →</button>
+      </form>
+    </div>
+    <br>
+    <br>
     </div>
 
-    <form [formGroup]="mymedrecForm" (ngSubmit)="saveMedicalRecord()">
-        <div class="form-row">
 
-            <div class="input-data">
-               <input type="text" required name="datebirth" id="datebirth" formControlName="datebirth">
-               <div class="underline"></div>
-               <label for="firstname">Date of birth</label>
-            </div>
-
-            <div class="input-data">
-                <input type="text" required name="appdate" id="appdate" formControlName="appdate">
-                <div class="underline"></div>
-                <label for="appdate">Appointment Date</label>
-             </div>
-
-        </div>
-
-        <div class="form-row">
-             <div class="input-data">
-                <input type="text" required name="apptime" id="apptime" formControlName="apptime">
-                <div class="underline"></div>
-                <label for="apptime">Appointment Time</label>
-             </div>
-    
-             <div class="input-data">
-                <input type="text" required name="diagnosis" id="diagnosis" formControlName="diagnosis">
-                <div class="underline"></div>
-                <label for="diagnosis">Diagnostic</label>
-             </div>
-        </div>
-        
-        <div class="form-row">
-
-        
-
-             <div class="input-data">
-                <input type="text" required name="treatment" id="treatment" formControlName="treatment">
-                <div class="underline"></div>
-                <label for="treatment">Treatment</label>
-             </div>
-        </div>
-
-
-    
-        <div class="form-row submit-btn">
-            <div class="input-data">
-               <div class="inner"></div>
-               <input type="submit" value="Add">
-            </div>
-         </div>
-
-    </form>
-    </div>
 <app-footer></app-footer>

@@ -1,44 +1,29 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary my-3" [routerLink]="['/appointmentlist']">Back</button>
-            <hr>
-            <h1></h1>
+<app-user-navbar></app-user-navbar>
+
+    <div class="upapt">
+      <br>
+
+    <div class="container">
+      <form class="form" [formGroup]="updateappForm" (ngSubmit)="updateapt()">
+        <div class="descr">UPDATE APPOINTMENT</div>
+        <div class="input">
+            <input name="firsstname" required type="text" formControlName="firstname">
+            <label for="firstname">Name</label>
         </div>
+
+        <div class="input">
+            <input required name="time" type="time" formControlName="appointmentTime">
+            <label for="time">Appointment Time</label>
+        </div>
+
+        <div class="input">
+            <input  type="date"  id="date" formControlName="appointmentDate">
+            <label for="Date">Appointment date</label>
+        </div>
+        <button type="submit" >Update Appointment →</button>
+      </form>
     </div>
-    <form [formGroup]="updateappForm" >
-        <div class="form-row">
-            <div class="input-data">
-               <input type="text" required name="firstname" id="firstname" formControlName="firstname">
-               <div class="underline"></div>
-               <label for="firstname">Firstname</label>
-            </div>
-            <div class="input-data">
-                <input type="text" required name="appointmenttime" id="appointmenttime" formControlName="appointmenttime">
-                <div class="underline"></div>
-                <label for="">AppointmentTime</label>
-             </div>
-             </div>
-             <div class="form-row">
-
-             <div class="input-data">
-                <input type="text" required name="appointmentdate" id="appointmentdate" formControlName="appointmentdate">
-                <div class="underline"></div>
-                <label for="">AppointmentDate</label>
-                </div>
-             </div>
-
-
-             <div class="form-row submit-btn">
-                <div class="input-data">
-                   <div class="inner"></div>
-                   <input type="submit" value="Update">
-                </div>
-             </div>
-
-
-       
-
-
-    </form>
+    <br>
+    <br>
     </div>
+<app-footer></app-footer>

@@ -19,86 +19,152 @@ import { SecretaryProfileComponent } from './secretary-profile/secretary-profile
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { MedicalrecordListComponent } from './medicalrecord-list/medicalrecord-list.component';
+import { UpdateMedicalRecordComponent } from './update-medical-record/update-medical-record.component';
+import { UpdateUserDetailsComponent } from './update-user-details/update-user-details.component';
+import { DoctornavbarComponent } from './doctornavbar/doctornavbar.component';
+import { MedicalDetailsComponent } from './medical-details/medical-details.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
+
+
 const routes: Routes = [
   {
     path:'',
     component:HomeComponent
   },
   {
+    path:'navbar',
+    component:NavbarComponent
+  },
+  {
+    path:'footer',
+    component:FooterComponent
+  },
+
+
+
+
+
+  {
+    path:'contactus',
+    component:ContactusComponent
+  },
+  {
     path:'login',
     component:LoginComponent
   },
+
   {path:'register',
-component:RegisterComponent},
-{
-  path:'navbar',
-  component:NavbarComponent
+  component:RegisterComponent
 },
-{
-  path:'footer',
-  component:FooterComponent
-},
-{
-  path:'contactus',
-  component:ContactusComponent
-},
+
+
+
+
+
+
 {
   path:'addappointment',
   component:AddAppointmentComponent
 },
 {
-  path:'updateappointment',
-  component:UpdateAppointmentComponent
-},
-{
-  path:'appointmentlist',
-  component:AppointmentListComponent
-},  
-
-{
   path:'addmedicalrecord',
   component:AddMedicalrecordComponent
 },
+
+
+
+
+
+{
+  path:'medicalrecordslist',
+  component:MedicalrecordListComponent
+},
+
+{
+  path:'appointmentlist',
+  component:AppointmentListComponent
+},
+{
+  path:'userslist',
+  component:UsersListComponent
+},
+
+
+
+
+
+
+{
+  path:'updateappointment/:id',
+  component:UpdateAppointmentComponent
+},
+
+{
+  path:'updateMed/:id',
+  component:UpdateMedicalRecordComponent
+},
+{
+  path:'updateuser/:id',
+  component:UpdateUserDetailsComponent
+},
+
+
+
+
+{
+  path:'secretaryprofile',
+  component:SecretaryProfileComponent
+},
+{
+  path:'doctorprofile',
+  component:DoctorProfileComponent
+},
+{
+  path:'profileuser',
+  component:ProfileUserComponent
+},
+
+{
+  path:'doctornavbar',
+  component:DoctornavbarComponent
+},
+
+
+
 {
   path:'loginnavbar',
   component:LoginNavbarComponent
 },
 
 {
-  path:'profileuser',
-  component:ProfileUserComponent
-},
-
-  {
     path:'navbaruser',
     component:UserNavbarComponent
-  },
-  
-  {
+},
+{
     path:'homeuser',
     component:UserHomeComponent
-  },
-  {
+ },
+{
     path:'secretarynavbar',
     component:SecretaryNavbarComponent
-  },
-  {
-    path:'secretaryprofile',
-    component:SecretaryProfileComponent
-  },
-  {
-    path:'doctorprofile',
-    component:DoctorProfileComponent
-  },
-  
-  {
-    path:'userslist',
-    component:UsersListComponent
-  },
-  {
-    path:'medicalrecordslist',
-    component:MedicalrecordListComponent
-  },
+},
+{
+  path:'detailsmed/:id',
+  component:MedicalDetailsComponent
+},
+
+{
+  path:'detailsuser/:id',
+  component:UserDetailsComponent
+},
+{
+  path:'detailsappointment/:id',
+  component:AppointmentDetailsComponent
+},
+
+
+
 ];
 
 @NgModule({

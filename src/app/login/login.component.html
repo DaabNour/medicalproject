@@ -1,38 +1,15 @@
-<app-login-navbar></app-login-navbar>
-  <div class="containerlog">
-
-  <div class="screen">
-    <div class="screen__content">
-      <form [formGroup]="myloginForm" (ngSubmit)="saveLogin()">
-   
-  
-        <div class="login__field">
-          <i class="login__icon fas fa-user"></i>
-          <input type="email" class="login__input" placeholder="User name / Email" required formControlName="email">
-        </div>
-
-        <div class="login__field">
-          <i class="login__icon fas fa-lock"></i>
-          <input type="password" class="login__input" placeholder="Password" required  formControlName="password">
-        </div>
-        
-        <button class="button login__submit" type="submit" value="Send">
-          <span class="button__text">Log In Now</span>
-          <i class="button__icon fas fa-chevron-right"></i>
-        </button> 
+<app-navbar></app-navbar>
+<div class="parent">
+  <div class="div1">
+    <div class="container">
+      <div class="heading">Sign In</div>
+      <form class="form" [formGroup]="myloginForm" (ngSubmit)="login()">
+        <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail" formControlName="emailu">
+        <input required="" class="input" type="password" name="password" id="password" placeholder="Password" formControlName="passwordu">
+        <input class="login-button" type="submit" value="Sign In"  >
       </form>
+        <span class="signup"><a href="register">Sign Up</a></span>
     </div>
-   
-        <div class="screen__background">
-          <span class="screen__background__shape screen__background__shape4"></span>
-          <span class="screen__background__shape screen__background__shape3"></span>		
-          <span class="screen__background__shape screen__background__shape2"></span>
-          <span class="screen__background__shape screen__background__shape1"></span>
-        </div>
-
-         
-
-
-</div>
-            
-
+     </div>
+  </div>
+<app-footer></app-footer>

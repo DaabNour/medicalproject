@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder ,FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { FormBuilder ,FormControl, FormGroup, Validators } from '@angular/forms'
 export class RegisterComponent implements OnInit{
   myregisterForm : FormGroup
 
-  constructor(private fbreg:FormBuilder) {
+  constructor(private fbreg:FormBuilder,private userService:UserService) {
     let regformControls ={
       firstNameu : new FormControl(),
       lastNameu : new FormControl(),
@@ -22,13 +23,19 @@ export class RegisterComponent implements OnInit{
   }
   ngOnInit(): void {
   }
-  
+
   saveRegistration(){
     console.log(this.myregisterForm.value);
-
-    //if (this.loginForm.invalid) return;
-
-// alert('Calling backend to login');
+    let user=this.myregisterForm.value;
+    this.userService.addUser(user).subscribe(
+      result=>{
+        console.log(result);
+        alert("User added successfully");
+      },
+      error=>{
+        console.log(error);
+      }
+    )
   }
 
 }

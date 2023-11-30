@@ -1,44 +1,17 @@
-<app-login-navbar></app-login-navbar>
-  <div class="containerregister">
-
-  <div class="screen">
-    <div class="screen__content">
-      <form [formGroup]="myregisterForm" (ngSubmit)="saveRegistration()">
-   
-        <div class="login__field">
-          <input type="firstNameu" class="login__input" placeholder="Username " required formControlName="firstNameu">
-        </div>
-
-        <div class="login__field">
-          <input type="lastNameu" class="login__input" placeholder="lastNameu" required  formControlName="lastNameu">
-        </div>
-        <div class="login__field">
-            <input type="emailu" class="login__input" placeholder="Email" required  formControlName="emailu">
-          </div>
-          <div class="login__field">
-            <input type="phoneu" class="login__input" placeholder="Phone nmber" required  formControlName="phoneu">
-          </div>
-        <div class="login__field">
-            <input type="passwordu" class="login__input" placeholder="New Password" required  formControlName="passwordu">
-          </div>
-        
-        <button class="button login__submit" type="submit" value="Send">
-          <span class="button__text">Register</span>
-          <i class="button__icon fas fa-chevron-right"></i>
-        </button> 
+<app-navbar></app-navbar>
+<div class="parent">
+  <div class="div1">
+    <div class="container">
+      <div class="heading">Sign Up</div>
+      <form action=""  [formGroup]="myregisterForm"  class="form">
+        <input required="" formControlName="firstNameu"  class="input" type="text" name="firstname" id="firstname" placeholder="Firstname">
+        <input required="" formControlName="lastNameu" class="input" type="text" name="lastname" id="lastname" placeholder="Lastname">
+        <input required="" formControlName="emailu" class="input" type="email" name="email" id="email" placeholder="E-mail">
+        <input required="" formControlName="phoneu" class="input" type="phone" name="phone" id="phone" placeholder="Phone Number">
+        <input required="" formControlName="passwordu" class="input" type="password" name="password" id="password" placeholder="Password">
+        <input class="register-button" (click)="saveRegistration()" type="submit" value="Register" [routerLink]="['/login']">
       </form>
+        <span class="signin"><a  href="login">Sign In</a></span>
     </div>
-   
-        <div class="screen__background">
-          <span class="screen__background__shape screen__background__shape4"></span>
-          <span class="screen__background__shape screen__background__shape3"></span>		
-          <span class="screen__background__shape screen__background__shape2"></span>
-          <span class="screen__background__shape screen__background__shape1"></span>
-        </div>
-
-         
-
-
-</div>
-            
-
+     </div>
+  </div>

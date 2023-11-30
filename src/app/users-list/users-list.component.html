@@ -1,13 +1,11 @@
-
-
+<app-secretary-navbar></app-secretary-navbar>
+<div class="ulist">
 <div class="container">
     <div class="h2">
-       Users List
+       Patients List
     </div>
     <table class="table">
-    
         <thead>
-           
             <tr>
                 <th>Id</th>
                 <th>Firstname</th>
@@ -15,28 +13,27 @@
                 <th>Email</th>
                 <th>Phone number</th>
                 <th>Action</th>
-
             </tr>
-            
         </thead>
 <tbody>
-    <tr *ngFor="let user of ListU ">
-        <th>{{ user.idu }}</th>
-
+    <tr *ngFor="let user of ListU">
+        <td>{{ user.idu }}</td>
         <td>{{ user.firstNameu }}</td>
         <td>{{ user.lastNameu }}</td>
         <td>{{ user.emailu }}</td>
         <td>{{ user.phoneu }}</td>
-
         <td>
             <div class="gem-button-container gem-button-position-center">
-            <button class="btn gem-button gem-green ">Details</button>
-            <button class="btn gem-button gem-purpel">Update</button>
-            <button class="btn gem-button gem-orange" >Delete</button>
-
-        </div>
+    
+            <button class="btn gem-button gem-green " [routerLink]="['/detailsuser',user.idu]">Details</button>
+            <button class="btn gem-button gem-purpel"  [routerLink]="['/updateuser',user.idu]">Update</button>
+            <button class="btn gem-button gem-orange" (click)="delete(user.idu)" >Delete </button>
+            </div>
         </td>
     </tr>
 </tbody>
 </table>
 
+</div>
+</div>
+<app-footer></app-footer>

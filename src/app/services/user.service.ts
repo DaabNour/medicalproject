@@ -13,27 +13,25 @@ const httpOptions = {
 export class UserService {
 
   private getAllUsersUrl = "http://localhost:8080/users/all";
-  private updateUserUrl="http://localhost:8080/users/update/{idu}";
-  private getUserUrl= "http://localhost:8080/users/{idu}";
-  private deleteUserUrl ="http://localhost:8080/users/delete/{idu}";
+  private updateUserUrl="http://localhost:8080/users/update/";
+  private getUserUrl= "http://localhost:8080/users/";
+  private deleteUserUrl ="http://localhost:8080/users/delete/";
   private deleteUserRoleUrl="http://localhost:8080/users/delete/{roleu}"
   private addUserUrl="http://localhost:8080/users/add";
   private getOneUserByRole ="hhttp://localhost:8080/users/byRole/{roleu}";
-  
+
   constructor(private httpuser:HttpClient) {
 
   }
 
     getAllUsers(){
       return this.httpuser.get<any>(this.getAllUsersUrl,httpOptions);
-       
-
     }
 
-    
-  
-  getOneUser(idu: String) {
-    return this.httpuser.get<any>(this.getUserUrl + idu)
+
+
+  getOneUser(id: number) {
+    return this.httpuser.get<any>(this.getUserUrl + id)
   }
 
 
@@ -41,20 +39,20 @@ export class UserService {
     return this.httpuser.get<any>(this.getOneUserByRole )
   }
 
-  
-    deleteUser(idu: String) {
-      return this.httpuser.delete<any>(this.deleteUserUrl + idu)
+
+    deleteUser(id: number) {
+      return this.httpuser.delete<any>(this.deleteUserUrl + id)
     }
 
-    //addUser() {
-      //return this.httpuser.post<any>(this.addUserUrl, );
-    //}
-    
+    addUser(user: any) {
+      return this.httpuser.post(this.addUserUrl,user );
+    }
+
     deleteUserRole(roleu: String) {
       return this.httpuser.delete<any>(this.deleteUserRoleUrl )
     }
-  
-    updateUser(idu :String){
-      return this.httpuser.put<any>(this.updateUserUrl ,idu);
+
+    updateUser(id :number,user:any){
+      return this.httpuser.put<any>(this.updateUserUrl+id,user);
     }
 }
